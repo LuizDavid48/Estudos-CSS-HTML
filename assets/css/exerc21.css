@@ -1,0 +1,42 @@
+/* básicos */
+td, th {
+  border: 3px solid;
+}
+table {
+  border-collapse: collapse;
+}
+
+/* cabeçalho fixo (melhora: adicionar top) */
+thead.classe1 {
+  position: sticky;
+  top: 0;
+  background-color: aliceblue;
+  z-index: 10;
+}
+
+/* rodapé */
+tfoot tr {
+  text-align: center;
+  font-weight: bolder;
+  background-color: aliceblue;
+}
+
+/* ***********************
+   Listras aplicadas nas TDs (importante)
+   para que o hover nos TDs funcione por cima
+   *************************/
+tbody.classe2 tr:nth-child(even) td {
+  background-color: rgb(163, 143, 143);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+tbody.classe2 tr:nth-child(odd) td {
+  background-color: rgb(162, 227, 230);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Hover na linha inteira — pinta todas as TDs */
+tbody.classe2 tr:hover td {
+  background-color: rgb(179, 178, 240);
+  color: rgb(0, 0, 0);
+}

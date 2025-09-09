@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio17</title>
+    <style>
+        thead {
+            color: gray;
+        }
+
+        th {
+            margin: 3px;
+            border: 1px solid;
+        }
+
+        tbody tr:nth-child(even) {
+            background: rgb(129, 129, 255);
+        }
+
+        td {
+            font-weight: lighter;
+            color: rgb(0, 0, 0);
+            border: 1px solid;
+        }
+
+        tr {
+            border: 1px solid;
+        }
+        tfoot td {
+            font-weight: bold;
+            background-color: skyblue;
+        }
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+                <th>Quantidade</th>
+                <th>Categoria</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Papelão</td>
+                <td>R$30</td>
+                <td>209</td>
+                <td>Papel</td>
+            </tr>
+            <tr>
+                <td>Plástico</td>
+                <td>R$25</td>
+                <td>356</td>
+                <td>Plásticos</td>
+            </tr>
+            <tr>
+                <td>Lápis</td>
+                <td>R$5</td>
+                <td>248</td>
+                <td>Lapiseiras</td>
+            </tr>
+            <tr>
+                <td>Mouse</td>
+                <td>R$67</td>
+                <td>113</td>
+                <td>Informática</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">Fonte: Supermarket's</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>

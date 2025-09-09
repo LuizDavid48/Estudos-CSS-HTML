@@ -1,0 +1,13 @@
+button:hover {
+    background: navy;
+    color: aliceblue;
+}
+button:active {
+    color: rgb(0, 0, 0);
+    background: green;
+}
+.botao {
+    transition: all 500ms;
+    width: 500px;
+    height: 300px;
+}

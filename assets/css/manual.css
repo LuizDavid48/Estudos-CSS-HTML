@@ -1,0 +1,846 @@
+🚀 MANUAL CSS 100% COMPLETO - PT-BR 📖 ÍNDICE RÁPIDO Fundamentos Seletores Box Model Layout Cores e Fundos Texto e Fontes Animações Responsividade Recursos Avançados Padrões Práticos 🧱 FUNDAMENTOS Sintaxe Básica css seletor {
+    propriedade: valor;
+    /* Comentário */
+}
+
+Onde Usar CSS Inline: <div style="color: red;">Interno: <style>div {
+    color: red;
+}
+
+</style>Externo: <link rel="stylesheet" href="estilo.css">Especificidade (Ordem de Prioridade) !important (evite usar) Estilos inline (style="") #id (100 pontos) .classe,
+:pseudo-classe,
+[atributo] (10 pontos) elemento,
+::pseudo-elemento (1 ponto) 🎯 SELETORES Básicos css * {}
+
+/* Universal */
+div {}
+
+/* Elemento */
+.classe {}
+
+/* Classe */
+#id {}
+
+/* ID */
+[type="text"] {}
+
+/* Atributo */
+Combinadores css div p {}
+
+/* Descendente */
+div>p {}
+
+/* Filho direto */
+div+p {}
+
+/* Irmão adjacente */
+div~p {}
+
+/* Irmãos gerais */
+Pseudo-classes (Estados) css:hover {}
+
+/* Mouse sobre */
+:focus {}
+
+/* Focado */
+:active {}
+
+/* Clicando */
+:visited {}
+
+/* Link visitado */
+:disabled {}
+
+/* Desabilitado */
+:checked {}
+
+/* Checkbox/radio selecionado */
+:first-child {}
+
+/* Primeiro filho */
+:last-child {}
+
+/* Último filho */
+:nth-child(n) {}
+
+/* Enésimo filho */
+:not(seletor) {}
+
+/* Negação */
+Pseudo-elementos (Partes do elemento) css::before {
+    content: "";
+}
+
+/* Antes do conteúdo */
+::after {
+    content: "";
+}
+
+/* Depois do conteúdo */
+::first-line {}
+
+/* Primeira linha */
+::first-letter {}
+
+/* Primeira letra */
+::selection {}
+
+/* Texto selecionado */
+📦 BOX MODEL Estrutura Completa css .elemento {
+    /* Conteúdo */
+    width: 100px;
+    height: 100px;
+
+    /* Preenchimento */
+    padding: 20px;
+    /* Todos os lados */
+    padding: 10px 20px;
+    /* Vertical | Horizontal */
+    padding: 5px 10px 15px 20px;
+    /* Top | Right | Bottom | Left */
+
+    /* Bordas */
+    border: 2px solid #000;
+    /* Largura | estilo | cor */
+    border-radius: 10px;
+    /* Cantos arredondados */
+
+    /* Margens */
+    margin: 20px;
+    margin: 0 auto;
+    /* Centralização horizontal */
+
+    /* Modelo alternativo */
+    box-sizing: border-box;
+    /* Inclui padding e border na largura/altura */
+}
+
+Estilos de Borda css border-style: solid;
+/* Sólida */
+border-style: dashed;
+/* Tracejada */
+border-style: dotted;
+/* Pontilhada */
+border-style: double;
+/* Dupla */
+border-style: groove;
+/* Canalizada */
+border-style: ridge;
+/* Elevada */
+
+🎨 LAYOUT Display css display: block;
+/* Ocupa toda a linha */
+display: inline;
+/* Em linha com texto */
+display: inline-block;
+/* Bloco em linha */
+display: none;
+/* Oculta elemento */
+display: flex;
+/* Flexbox */
+display: grid;
+/* Grid */
+Position css position: static;
+/* Padrão */
+position: relative;
+/* Relativo à própria posição */
+position: absolute;
+/* Relativo ao ancestral posicionado */
+position: fixed;
+/* Relativo à viewport */
+position: sticky;
+/* Híbrido relative/fixed */
+
+/* Offsets (usados com relative, absolute, fixed, sticky) */
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+
+Flexbox (Layout Unidimensional) css .container {
+    display: flex;
+    flex-direction: row;
+    /* row | row-reverse | column | column-reverse */
+    flex-wrap: nowrap;
+    /* nowrap | wrap | wrap-reverse */
+    justify-content: flex-start;
+    /* Alinhamento horizontal */
+    align-items: stretch;
+    /* Alinhamento vertical */
+    align-content: stretch;
+    /* Alinhamento de múltiplas linhas */
+    gap: 10px;
+    /* Espaço entre itens */
+}
+
+.item {
+    flex: 0 1 auto;
+    /* grow | shrink | basis */
+    align-self: auto;
+    /* Alinhamento individual */
+    order: 0;
+    /* Ordem de display */
+}
+
+Grid (Layout Bidimensional) css .container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    /* Colunas */
+    grid-template-rows: 100px auto;
+    /* Linhas */
+    grid-template-areas:
+        /* Áreas nomeadas */
+        "header header header"
+        "sidebar main aside"
+        "footer footer footer";
+    gap: 1rem;
+    /* Espaço entre células */
+    justify-items: stretch;
+    /* Alinhamento horizontal interno */
+    align-items: stretch;
+    /* Alinhamento vertical interno */
+    justify-content: start;
+    /* Alinhamento horizontal geral */
+    align-content: start;
+    /* Alinhamento vertical geral */
+}
+
+.item {
+    grid-column: 1 / 3;
+    /* Início / fim da coluna */
+    grid-row: 1 / 2;
+    /* Início / fim da linha */
+    grid-area: header;
+    /* Nome da área */
+    justify-self: stretch;
+    /* Alinhamento horizontal individual */
+    align-self: stretch;
+    /* Alinhamento vertical individual */
+}
+
+Multicolunas css .container {
+    column-count: 3;
+    /* Número de colunas */
+    column-gap: 20px;
+    /* Espaço entre colunas */
+    column-rule: 1px solid #ccc;
+    /* Linha entre colunas */
+    column-width: 200px;
+    /* Largura mínima das colunas */
+}
+
+🌈 CORES E FUNDOS Formatos de Cor css color: #ff0000;
+/* Hex */
+color: rgb(255, 0, 0);
+/* RGB */
+color: rgba(255, 0, 0, 0.5);
+/* RGB com alpha */
+color: hsl(0, 100%, 50%);
+/* HSL - Matiz, Saturação, Luminosidade */
+color: hsla(0, 100%, 50%, 0.5);
+/* HSL com alpha */
+color: hwb(0 0% 0%);
+/* HWB - Matiz, Branco, Preto */
+Background css background-color: #fff;
+background-image: url("imagem.jpg");
+background-repeat: no-repeat;
+/* repeat | repeat-x | repeat-y | no-repeat */
+background-position: center;
+/* top | right | bottom | left | center */
+background-size: cover;
+/* cover | contain | auto | valor */
+background-attachment: fixed;
+/* scroll | fixed | local */
+
+/* Shorthand */
+background: #fff url("imagem.jpg") no-repeat center/cover fixed;
+Gradientes css
+/* Linear */
+background: linear-gradient(45deg, red, blue);
+background: linear-gradient(to right, red, blue);
+
+/* Radial */
+background: radial-gradient(circle, red, blue);
+background: radial-gradient(ellipse at top, red, blue);
+
+/* Conico */
+background: conic-gradient(red 0deg 90deg, blue 90deg 180deg);
+Múltiplos Fundos css background: url("textura.png") top left repeat,
+url("fundo.jpg") center/cover,
+linear-gradient(45deg, rgba(255, 0, 0, 0.5), rgba(0, 0, 255, 0.5));
+Filter (Filtros) css filter: blur(5px);
+filter: brightness(150%);
+filter: contrast(200%);
+filter: grayscale(100%);
+filter: hue-rotate(90deg);
+filter: invert(100%);
+filter: opacity(50%);
+filter: saturate(200%);
+filter: sepia(100%);
+filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
+
+/* Múltiplos filtros */
+filter: blur(2px) grayscale(50%) brightness(120%);
+Blend Modes css background-blend-mode: multiply;
+/* Multiplica cores */
+background-blend-mode: screen;
+/* Adição de cores */
+background-blend-mode: overlay;
+/* Combina multiply e screen */
+background-blend-mode: difference;
+/* Diferença entre cores */
+
+mix-blend-mode: multiply;
+/* Mescla com elementos abaixo */
+📝 TEXTO E FONTES Propriedades de Texto css text-align: left;
+/* left | right | center | justify */
+text-decoration: none;
+/* none | underline | overline | line-through */
+text-transform: none;
+/* none | uppercase | lowercase | capitalize */
+text-indent: 20px;
+/* Recuo da primeira linha */
+text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+/* X | Y | blur | cor */
+line-height: 1.5;
+/* Altura da linha */
+letter-spacing: 1px;
+/* Espaçamento entre letras */
+word-spacing: 2px;
+/* Espaçamento entre palavras */
+white-space: normal;
+/* normal | nowrap | pre | pre-wrap | pre-line */
+word-wrap: break-word;
+/* Quebra de palavras longas */
+overflow-wrap: break-word;
+/* Alternativa moderna */
+Fontes css font-family: "Arial",
+sans-serif;
+/* Fonte preferida + fallback */
+font-size: 16px;
+/* Tamanho */
+font-weight: normal;
+/* normal | bold | 100-900 */
+font-style: normal;
+/* normal | italic | oblique */
+font-variant: normal;
+/* normal | small-caps */
+font-stretch: normal;
+/* Largura da fonte */
+
+/* Shorthand */
+font: italic small-caps bold 16px/1.5 "Arial",
+sans-serif;
+
+Fontes Personalizadas (@font-face) css @font-face {
+    font-family: "MinhaFonte";
+    src: url("minhafonte.woff2") format("woff2"),
+        url("minhafonte.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    /* swap | block | fallback | optional */
+}
+
+Variáveis de Fonte css:root {
+    --fonte-titulo: "Georgia", serif;
+    --fonte-texto: "Helvetica", sans-serif;
+    --tamanho-base: 16px;
+}
+
+body {
+    font-family: var(--fonte-texto);
+    font-size: var(--tamanho-base);
+}
+
+🎭 ANIMAÇÕES Transitions (Transições) css .elemento {
+    transition-property: all;
+    /* Propriedades a animar */
+    transition-duration: 0.3s;
+    /* Duração */
+    transition-timing-function: ease;
+    /* Função de tempo */
+    transition-delay: 0s;
+    /* Atraso antes de iniciar */
+
+    /* Shorthand */
+    transition: all 0.3s ease 0s;
+}
+
+/* Funções de tempo comuns */
+transition-timing-function: ease;
+/* Devagar → rápido → devagar */
+transition-timing-function: ease-in;
+/* Devagar → rápido */
+transition-timing-function: ease-out;
+/* Rápido → devagar */
+transition-timing-function: ease-in-out;
+/* Devagar → rápido → devagar */
+transition-timing-function: linear;
+/* Velocidade constante */
+transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+
+/* Personalizada */
+Animations (Animações com Keyframes) css @keyframes nome-da-animacao {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.elemento {
+    animation-name: nome-da-animacao;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    /* Número de repetições */
+    animation-direction: normal;
+    /* normal | reverse | alternate | alternate-reverse */
+    animation-fill-mode: none;
+    /* none | forwards | backwards | both */
+    animation-play-state: running;
+    /* running | paused */
+
+    /* Shorthand */
+    animation: nome-da-animacao 1s ease 0s 1 normal none running;
+}
+
+Transform (Transformações) css transform: none;
+
+/* Transformações 2D */
+transform: translate(100px, 50px);
+/* Move elemento */
+transform: translateX(100px);
+transform: translateY(50px);
+transform: scale(1.5);
+/* Escala */
+transform: scaleX(1.5);
+transform: scaleY(1.5);
+transform: rotate(45deg);
+/* Rotação */
+transform: skew(30deg, 20deg);
+/* Inclinação */
+transform: skewX(30deg);
+transform: skewY(20deg);
+
+/* Transformações 3D */
+transform: translate3d(100px, 50px, 0);
+transform: scale3d(1.5, 1.5, 1.5);
+transform: rotate3d(1, 1, 1, 45deg);
+transform: rotateX(45deg);
+transform: rotateY(45deg);
+transform: rotateZ(45deg);
+
+/* Múltiplas transformações */
+transform: translate(100px, 50px) rotate(45deg) scale(1.2);
+
+/* Origem da transformação */
+transform-origin: center center;
+/* X | Y | Z */
+
+/* Perspectiva 3D */
+perspective: 1000px;
+transform-style: preserve-3d;
+/* flat | preserve-3d */
+backface-visibility: visible;
+/* visible | hidden */
+📱 RESPONSIVIDADE Media Queries css
+/* Mobile First (min-width) */
+@media (min-width: 576px) {
+    /* Small devices */
+}
+
+@media (min-width: 768px) {
+    /* Medium devices */
+}
+
+@media (min-width: 992px) {
+    /* Large devices */
+}
+
+@media (min-width: 1200px) {
+    /* Extra large */
+}
+
+/* Desktop First (max-width) */
+@media (max-width: 1199px) {
+    /* Large devices */
+}
+
+@media (max-width: 991px) {
+    /* Medium devices */
+}
+
+@media (max-width: 767px) {
+    /* Small devices */
+}
+
+@media (max-width: 575px) {
+    /* Extra small */
+}
+
+/* Outras mídias */
+@media screen {}
+
+/* Telas */
+@media print {}
+
+/* Impressão */
+@media (orientation: portrait) {}
+
+/* Orientação retrato */
+@media (orientation: landscape) {}
+
+/* Orientação paisagem */
+
+/* Recursos do dispositivo */
+@media (hover: hover) {}
+
+/* Dispositivo com hover */
+@media (pointer: fine) {}
+
+/* Mouse ou stylus */
+@media (pointer: coarse) {}
+
+/* Toque */
+@media (prefers-color-scheme: dark) {}
+
+/* Modo escuro */
+@media (prefers-reduced-motion: reduce) {}
+
+/* Prefere menos animação */
+Unidades Responsivas css .elemento {
+    width: 100%;
+    /* Porcentagem */
+    width: 100vw;
+    /* Viewport width */
+    height: 100vh;
+    /* Viewport height */
+    font-size: 2rem;
+    /* Relativo ao root */
+    padding: 2em;
+    /* Relativo ao font-size do elemento */
+    margin: 5%;
+    /* Porcentagem do container */
+
+    /* Valores mínimos/máximos */
+    min-width: 300px;
+    max-width: 1200px;
+
+    /* Clamp (mínimo, ideal, máximo) */
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    padding: clamp(0.5rem, 3%, 2rem);
+}
+
+Imagens Responsivas css img {
+    max-width: 100%;
+    /* Não ultrapassa o container */
+    height: auto;
+    /* Mantém proporção */
+    object-fit: cover;
+    /* cover | contain | fill | scale-down */
+    object-position: center;
+    /* Posição do objeto */
+}
+
+/* Picture element para art direction */
+<picture><source media="(min-width: 768px)" srcset="large.jpg"><source media="(min-width: 576px)" srcset="medium.jpg"><img src="small.jpg" alt="Descrição"></picture>Container Queries css .card {
+    container-type: inline-size;
+    /* Tamanho inline */
+    container-name: card;
+    /* Nome opcional */
+}
+
+@container card (min-width: 400px) {
+    .card {
+        display: flex;
+        gap: 1rem;
+    }
+}
+
+@container (min-width: 600px) {
+    .card {
+        padding: 2rem;
+    }
+}
+
+⚡ RECURSOS AVANÇADOS Variáveis CSS (Custom Properties) css:root {
+    --cor-primaria: #007bff;
+    --cor-secundaria: #6c757d;
+    --espacamento: 1rem;
+    --borda-raio: 0.25rem;
+    --sombra: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.elemento {
+    color: var(--cor-primaria);
+    padding: var(--espacamento);
+    border-radius: var(--borda-raio);
+    box-shadow: var(--sombra);
+
+    /* Fallback para variáveis não definidas */
+    background: var(--cor-fundo, #fff);
+}
+
+Nesting (Aninhamento) css .card {
+    padding: 1rem;
+
+    /* Seletores descendentes */
+    & .titulo {
+        font-size: 1.5rem;
+    }
+
+    /* Pseudo-classes */
+    &:hover {
+        background: #f8f9fa;
+    }
+
+    /* Media queries aninhadas */
+    @media (min-width: 768px) {
+        padding: 2rem;
+    }
+}
+
+Functions (Funções) css
+/* Funções matemáticas */
+width: calc(100% - 80px);
+height: min(100px, 50vh);
+width: max(300px, 50%);
+width: clamp(300px, 50%, 800px);
+
+/* Funções de cor */
+color: rgb(255 0 0 / 0.5);
+/* Nova sintaxe RGB */
+color: color-mix(in srgb, red 50%, blue 50%);
+color: color(display-p3 1 0 0);
+/* Wide gamut */
+
+/* Funções de imagem */
+background: image-set("image.jpg" 1x, "image-2x.jpg" 2x);
+
+Scroll Snap css .container {
+    scroll-snap-type: y mandatory;
+    /* Eixo e comportamento */
+    scroll-snap-type: x proximity;
+    scroll-padding: 20px;
+    /* Espaço ao redor */
+    scroll-margin: 20px;
+    /* Margem dos itens */
+}
+
+.item {
+    scroll-snap-align: start;
+    /* start | center | end */
+    scroll-snap-stop: normal;
+    /* normal | always */
+}
+
+Masking e Clip-path css
+/* Clip-path (recorte) */
+clip-path: circle(50% at center);
+clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+clip-path: inset(10% 20% 30% 40%);
+/* Top | Right | Bottom | Left */
+
+/* Mask (máscara) */
+mask-image: url(mascara.png);
+mask-mode: alpha;
+/* alpha | luminance */
+mask-size: cover;
+mask-position: center;
+🧩 PADRÕES PRÁTICOS Centralização Completa css
+
+/* Flexbox */
+.centro-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Grid */
+.centro-grid {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+/* Position */
+.centro-absoluto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+Sticky Footer css body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    /* Ocupa o espaço restante */
+}
+
+footer {
+    margin-top: auto;
+    /* Empurra para baixo */
+}
+
+Aspect Ratio css .container {
+    /* Método moderno */
+    aspect-ratio: 16 / 9;
+
+    /* Fallback com padding trick */
+    position: relative;
+    padding-top: 56.25%;
+    /* 16:9 = 9/16 = 0.5625 */
+}
+
+.container>* {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+Texto Truncado com Ellipsis css .truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Múltiplas linhas */
+.truncate-2-linhas {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+Glassmorphism css .glass {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+Custom Checkbox/Radio css <input type="checkbox" id="custom" class="hidden"><label for="custom" class="custom-checkbox"></label>.hidden {
+    display: none;
+}
+
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.hidden:checked+.custom-checkbox {
+    background: #007bff;
+    border-color: #007bff;
+}
+
+.hidden:checked+.custom-checkbox::after {
+    content: "✓";
+    color: white;
+    display: block;
+    text-align: center;
+}
+
+Tooltip CSS css [data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem;
+    background: #333;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+[data-tooltip]:hover::before {
+    opacity: 1;
+    visibility: visible;
+    bottom: calc(100% + 10px);
+}
+
+🛠️ DEBUG E PERFORMANCE Debug Visual css
+
+/* Outline para todos os elementos */
+* {
+    outline: 1px solid red !important;
+}
+
+/* Debug específico */
+.debug {
+    outline: 2px dashed blue;
+}
+
+/* Grid debug */
+.grid-debug {
+    background: repeating-linear-gradient(90deg,
+            transparent,
+            transparent 1fr,
+            rgba(255, 0, 0, 0.1) 1fr,
+            rgba(255, 0, 0, 0.1) calc(1fr + 1px));
+}
+
+Performance css
+
+/* Otimiza animações */
+.will-animate {
+    will-change: transform, opacity;
+}
+
+/* Reduce motion para acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Content-visibility para performance */
+.lazy-render {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+    /* Altura estimada */
+}
+
+📚 RECURSOS RECOMENDADOS Ferramentas Online CSS Grid Generator: https: //cssgrid-generator.netlify.app/
+
+Flexbox Froggy: https: //flexboxfroggy.com/
+
+CSS Tricks Guide: https: //css-tricks.com/
+
+Can I Use: https: //caniuse.com/
+
+Boas Práticas Mobile First: Comece pelo mobile e use min-width Variáveis CSS: Use para cores e valores repetitivos BEM Methodology: Block__Element--Modifier CSS Custom Properties: Para temas dinâmicos Prefira Flexbox/Grid: Over float e position Teste em Múltiplos Navegadores: Especialmente mobile

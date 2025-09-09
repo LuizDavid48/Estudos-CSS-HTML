@@ -1,0 +1,9 @@
+[meu-atributo|="valor"] {
+color: rgb(255, 0, 0);
+}
+.head {
+    transition: all 1s ease-in-out;
+}
+.head:hover {
+    background: teal;
+}

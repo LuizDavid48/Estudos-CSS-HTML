@@ -1,0 +1,113 @@
+body {
+    background: #f0f0f0;
+    font-family: "TASA Orbiter", sans-serif;
+    padding-top: 120px;
+    /* igual à height do header */
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    /* remover margin-top daqui */
+}
+
+.container img {
+    width: 100%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    /* altura fixa e previsível */
+    background: #1a237e;
+    color: #fff;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    /* título em cima, menu embaixo */
+    align-items: center;
+    /* centraliza horizontalmente */
+    justify-content: center;
+    /* centraliza verticalmente título+menu */
+    box-sizing: border-box;
+    padding: 10px 0;
+    /* controla espaçamento interno */
+}
+
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 6px 0 0;
+    /* distância pequena entre título e links */
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+header li {
+    margin: 0;
+    padding: 0;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 4px 6px;
+    display: inline-block;
+}
+
+header a:hover {
+    color: aqua;
+}
+
+article h2 {
+    font-size: 24px;
+    text-align: center;
+}
+
+article h3 {
+    font-size: 20px;
+    text-align: center;
+}
+
+article p {
+    line-height: 1.6;
+    font-size: 19px;
+}
+
+.receitas ul {
+    list-style-type: none;
+}
+
+.receitas li {
+    margin: 20px;
+    padding: 10px;
+    font-size: 20px;
+    background: #1a237e;
+    color: #fff;
+    text-align: center;
+    font-style: italic;
+}
+
+footer {
+    text-align: center;
+    background: #333;
+    color: white;
+    padding: 20px;
+}

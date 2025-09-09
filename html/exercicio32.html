@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 32</title>
+    <style>
+        header {
+            background-color: violet;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            height: 80px;
+        }
+
+        header h1,
+        h2 {
+            font-size: 22px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100vh;
+            /* Ocupa a altura total da janela de visualização */
+            background-color: #333;
+            padding-top: 20px;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            min-height: 300px;
+            margin-top: 80px;
+            margin-left: 200px;
+        }
+
+        .secao1 {
+            background-color: aqua;
+        }
+
+        .secao2 {
+            background-color: blue;
+        }
+
+        .secao3 {
+            background-color: cornflowerblue;
+        }
+
+        footer {
+            text-align: center;
+            position: relative;
+            padding: 10px;
+        }
+
+        @media screen and (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            main {
+                width: 100%;
+            }
+        }
+
+        @media screen and (min-width: 769px) {
+            nav {
+                display: block;
+            }
+
+            main {
+                margin-left: 200px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>
+            RoopsWeiops
+        </h1>
+        <h2>
+            Bem-vindo ao site fictício do Exercício 32
+        </h2>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Contato</a></li>
+            <li><a href="#">Suporte</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="secao1">
+            <h2>Texto 1</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis commodi at exercitationem, veritatis
+                amet recusandae, incidunt quo alias quos neque officiis ad et dignissimos sed labore, esse optio.
+                Dolore, qui?</p>
+        </section>
+        <section class="secao2">
+            <h2>Texto 2</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates soluta odio fuga! Ducimus est
+                impedit, similique corrupti consequuntur libero provident odit eum aliquid nobis quae fuga omnis
+                consectetur quo. Non.</p>
+        </section>
+        <section class="secao3">
+            <h2>Texto 3</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis ab nulla distinctio veritatis mollitia
+                laboriosam voluptate eaque quae sint dignissimos? Ad sequi, sapiente iusto eos modi esse? Quae, atque
+                voluptas?</p>
+        </section>
+    </main>
+    <footer>Todos os direitos reservados - RoopsWeiops 2025</footer>
+</body>
+
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 29</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: inherit;
+        }
+
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+            border: 0 solid #2aa4ed;
+        }
+
+        header {
+            text-align: center;
+            padding: 15px;
+            background-color: #2aa4ed;
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        nav li a {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        li a {
+            transition: all 500ms ease-in-out;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: rgba(122, 100, 220, 0.5);
+        }
+
+        main {
+
+            margin: 5px;
+            display: grid;
+            overflow: auto;
+            display: grid;
+            grid-template-columns: 7fr 3fr;
+            gap: 15px;
+            padding: 10px;
+        }
+
+        main .destaque {
+            width: 70%;
+            background-color: #567aa4;
+            color: white;
+        }
+
+        main section {
+            color: white;
+        }
+
+        section:nth-child(odd) {
+            background-color: #1a3c50;
+        }
+
+        section:nth-child(even) {
+            background-color: #4e1b7e;
+        }
+
+        table thead {
+            background-color: rgb(10, 67, 10);
+            color: white;
+        }
+
+        table {
+            border: 1px solid;
+            max-height: 650px;
+            display: block;
+            overflow-y: auto;
+        }
+
+        table tbody tr:nth-child(odd):not(.top1) {
+            background-color: #aff345;
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: #acc379;
+        }
+
+        div h2 {
+            border: 1px solid;
+        }
+
+        tbody .top1 {
+            background-color: gold;
+        }
+
+        form {
+            display: block;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        legend {
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        label {
+            display: block;
+            margin: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            border: 1px solid;
+            height: 100px;
+        }
+
+        footer {
+            background-color: darkblue;
+            text-align: center;
+        }
+
+        footer nav ul li a {
+            color: white;
+        }
+
+        footer p {
+            color: white;
+        }
+
+        button {
+            transition: all 1s ease-in-out;
+            background-color: rgb(212, 212, 212);
+            padding: 10px;
+        }
+
+        button:hover {
+            background-color: #ee109e;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Frawless News - O seu site de notícias</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Trabalhe Conosco</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="coluna1">
+            <section class="destaque">
+                <h2>Maduro mobiliza 4,5 milhões de milicianos em toda a Venezuela</h2>
+                <p>O ditador da Venezuela Nicolás Maduro anunciou o envio de mais de 4,5 milhões de milicianos para
+                    cidades
+                    de todo o território do país como parte de um "plano de paz" do governo.
+
+                    Maduro fez o comentário durante uma reunião de trabalho televisionada na terça-feira (18) com
+                    governadores e prefeitos em Caracas. Ele estava acompanhado do ministro da Justiça do país, Diosdado
+                    Cabello.
+
+                    "Ativarei um plano especial para garantir a cobertura com mais de 4,5 milhões de milicianos em todo
+                    o
+                    território nacional. Milícias preparadas, ativadas e armadas", afirmou Maduro.</p>
+            </section>
+            <section>
+                <h2>Setor privado dos EUA alerta sobre "risco China" e pede alívio ao Brasil</h2>
+                <p>Grandes empresas e associações do setor privado nos Estados Unidos levaram ao USTR (Escritório de
+                    Representação Comercial da Casa Branca) pedidos de novas exclusões do tarifaço aplicado por Donald
+                    Trump
+                    sobre produtos brasileiros e a intensificação de negociações comerciais com o governo do presidente
+                    Luiz
+                    Inácio Lula da Silva (PT).
+
+                    Além de demonstrar o risco de encarecimento de produtos finais no mercado interno americano, elas
+                    recorreram a argumentos de caráter geopolítico e alertaram o USTR sobre uma possibilidade de
+                    aproximação
+                    crescente do Brasil com a China.</p>
+            </section>
+            <section>
+                <h2>Ações de bancos caem em bloco em meio à polêmica com Lei Magnitsky</h2>
+                <p>
+                    Segundo agentes do mercado consultados pela CNN, a movimentação se deve à decisão de segunda-feira
+                    (18)
+                    do ministro Flávio Dino, do STF (Supremo Tribunal Federal), de que leis ou decisões judiciais de
+                    outros
+                    países não têm efeitos no Brasil a não ser que passem por uma validação da justiça nacional.
+
+                    Apesar de não ter feito menção direta, a decisão de Dino se relaciona diretamente à Lei Magnitsky,
+                    imposta pelos Estados Unidos como sanção ao ministro do STF Alexandre de Moraes no final de julho.
+                    Entre
+                    outras sanções, a lei prevê o bloqueio de contas bancárias e de bens em solo norte-americano.
+                </p>
+            </section>
+        </div>
+        <div class="coluna2">
+            <div>
+                <h2>Notícias mais lidas</h2>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Notícia</th>
+                        <th>Data</th>
+                        <th>Tema</th>
+                        <th>Comentários</th>
+                        <th>Visualizações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="top1">
+                        <td>Empresas americanas vão divergir sobre taxa ao Brasil em audiência nos EUA</td>
+                        <td>19/08/2025</td>
+                        <td>Política</td>
+                        <td>245</td>
+                        <td>11.506</td>
+                    </tr>
+                    <tr>
+                        <td>Amanda Kimberlly expõe discussão com Biancardi em meio a polêmica com filha</td>
+                        <td>19/08/2025</td>
+                        <td>Famosos</td>
+                        <td>21</td>
+                        <td>3.455</td>
+                    </tr>
+                    <tr>
+                        <td>Moraes revoga proibição de contato de réu do núcleo 3 com investigados</td>
+                        <td>19/08/2025</td>
+                        <td>Política</td>
+                        <td>110</td>
+                        <td>8.990</td>
+                    </tr>
+                    <tr>
+                        <td>EUA enviam navios de guerra para costa da Venezuela, dizem fontes</td>
+                        <td>19/08/2025</td>
+                        <td>Internacional</td>
+                        <td>655</td>
+                        <td>33.643</td>
+                    </tr>
+                    <tr>
+                        <td>"Não se enfrenta um país dez vezes o seu tamanho", diz Trump após reunião</td>
+                        <td>19/08/2025</td>
+                        <td>Geopolítica</td>
+                        <td>88</td>
+                        <td>5.112</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <form>
+            <fieldset>
+                <legend>Fale conosco</legend>
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome" placeholder="Insira seu nome">
+
+                <label for="email">Seu e-mail</label>
+                <input type="email" name="email" id="email" placeholder="Insira seu e-mail">
+
+                <label for="mensagem">Deixe sua mensagem</label>
+                <textarea name="mensagem" id="mensagem" placeholder="Insira sua mensagem para nós"></textarea>
+
+                <button type="submit">Enviar</button>
+            </fieldset>
+        </form>
+    </main>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="#">Faça-nos uma doação</a></li>
+                <li><a href="#">Avalie nosso conteúdo</a></li>
+                <li><a href="#">Nossos parceiros</a></li>
+            </ul>
+        </nav>
+        <p>Com carinho, David ♡</p>
+    </footer>
+</body>
+
+</html>

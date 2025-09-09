@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 22</title>
+    <style>
+        .main1,
+        .main2 {
+            display: flex;
+            justify-content: center;
+            /* Centraliza horizontalmente o conteúdo */
+            margin: 15px auto;
+            /* Centraliza o próprio bloco na tela */
+            border: 1px solid;
+            width: 650px;
+            color: brown;
+            background: rgb(236, 255, 255);
+        }
+
+        fieldset {
+            width: 600px;
+            height: auto;
+
+        }
+
+        form {
+            padding: 5px;
+            margin: 5px;
+            border: 1px solid;
+        }
+
+        input {
+            border: 1px solid red;
+            outline: none;
+        }
+
+        input:focus {
+            border: 1px solid rgb(0, 255, 136);
+            outline: none;
+        }
+
+        label {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-align: center;
+            font-weight: bold;
+            color: brown;
+            margin: 5px;
+        }
+
+        legend {
+            font-weight: bold;
+            font-size: 25px;
+            color: cornflowerblue;
+        }
+        .pai {
+            display: flex;
+        }
+        button {
+            background: rgb(224, 224, 224);
+            transition: all 500ms ease-in-out;
+        }
+        button:hover {
+            background: firebrick;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pai">
+    <div class="main1">
+        <form>
+            <fieldset>
+                <legend>Insira seus dados</legend>
+                <label for="nome"><br>Nome</label>
+                <input type="text" name="nome" id="nome" placeholder="Seu nome">
+
+                <label for="email"> <br>Insira seu e-mail</label>
+                <input type="email" name="email" id="email" placeholder="Seu email">
+            </fieldset>
+        </form>
+    </div>
+    <div class="main2">
+        <form>
+            <fieldset>
+                <label for="telefone"> <br>Seu número de telefone</label>
+                <input type="number" name="telefone" id="telefone" placeholder="Seu número">
+
+                <label for="endereço"> <br>Insira seu endereço</label>
+                <input type="text" name="endereço" id="endereço" placeholder="Endereço">
+
+                <button>Enviar</button>
+            </fieldset>
+        </form>
+    </div>
+    </div>
+</body>
+
+</html>

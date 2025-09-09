@@ -1,0 +1,168 @@
+/*
+ * ESTILOS GLOBAIS
+ *
+ * Esta seção define estilos para a página inteira.
+ * A largura máxima e a centralização do conteúdo foram aplicadas aqui,
+ * seguindo a sua estrutura HTML original.
+ */
+body {
+    /* Define a cor de fundo da página como um cinza claro. */
+    background: rgb(172, 172, 172);
+    /* Escolhe uma fonte de fácil leitura para todo o site. */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* Centraliza o conteúdo do body na horizontal. */
+    margin: 0 auto;
+    /* Limita a largura do conteúdo a 800px. */
+    max-width: 800px;
+}
+
+/*
+ * ESTILOS DO CABEÇALHO (HEADER)
+ *
+ * Estiliza a seção do cabeçalho do blog.
+ */
+header {
+    /* Centraliza todos os elementos dentro do cabeçalho. */
+    text-align: center;
+    /* Adiciona espaçamento interno (acima, abaixo e nas laterais). */
+    padding: 10px;
+    /* Adiciona margem externa (acima, abaixo e nas laterais). */
+    margin: 10px;
+}
+
+/* Estiliza o item da lista (li) dentro do nav do cabeçalho. */
+header nav ul li {
+    /* Remove as bolinhas padrão da lista. */
+    list-style-type: none;
+}
+
+/* Estiliza os links (a) dentro do cabeçalho. */
+header a {
+    /* Remove o sublinhado dos links. */
+    text-decoration: none;
+    /* Adiciona margem entre os links. */
+    margin: 20px;
+    /* Define o tamanho da fonte. */
+    font-size: 20px;
+    /* Define a cor do texto. */
+    color: rgb(0, 0, 0);
+    /* Adiciona uma transição suave para efeitos de hover. */
+    transition: all 200ms ease-in-out;
+    /* Transforma os links em blocos para permitir a margem e o espaçamento. */
+    display: inline-block;
+}
+
+/* Efeito ao passar o mouse sobre os links (hover). */
+header a:hover {
+    /* Aumenta o tamanho do link em 10%. */
+    transform: scale(1.1);
+    /* Muda a cor do texto para branco. */
+    color: white;
+}
+
+/*
+ * ESTILOS DO CONTAINER PRINCIPAL
+ *
+ * Estiliza o container que centraliza o conteúdo do blog,
+ * usando Flexbox para o layout de duas colunas (artigo e barra lateral).
+ */
+.container {
+    /* Define a cor de fundo do container como branco. */
+    background: white;
+    /* Adiciona espaçamento interno para o conteúdo não ficar colado nas bordas. */
+    padding: 20px;
+    /* Habilita o Flexbox para criar um layout de duas colunas. */
+    display: flex;
+    /* Adiciona espaçamento entre as colunas (article e aside). */
+    gap: 10px;
+    /* Alinha os itens flexíveis (colunas) verticalmente ao centro. */
+    align-items: center;
+}
+
+/*
+ * ESTILOS DO ARTIGO (ARTICLE)
+ *
+ * Estiliza a coluna principal de conteúdo.
+ */
+.container article {
+    /* Define a proporção de espaço que o artigo ocupa (3 partes de 4). */
+    flex: 3;
+    /* Habilita o Flexbox para organizar os elementos internos em uma coluna. */
+    display: flex;
+    /* Organiza os elementos verticalmente, um abaixo do outro. */
+    flex-direction: column;
+}
+
+/*
+ * ESTILOS DA BARRA LATERAL (ASIDE)
+ *
+ * Estiliza a barra lateral do blog.
+ */
+.container aside {
+    /* Define a proporção de espaço que a barra lateral ocupa (1 parte de 4). */
+    flex: 1;
+}
+
+/* Estiliza o título (h2) da barra lateral. */
+aside h2 {
+    /* Define o tamanho da fonte. */
+    font-size: 20px;
+    /* Centraliza o texto do título. */
+    text-align: center;
+}
+
+/* Estiliza os parágrafos (p) da barra lateral. */
+aside p {
+    /* Define o tamanho da fonte. */
+    font-size: 14px;
+}
+
+/*
+ * ESTILOS DO ARTIGO (CONTINUAÇÃO)
+ */
+
+/* Estiliza o título principal do artigo (h2). */
+.container article h2 {
+    /* Define o tamanho da fonte. */
+    font-size: 26px;
+    /* Centraliza o texto do título. */
+    text-align: center;
+}
+
+/* Estiliza o bloco de informações do post. */
+.info-post {
+    /* Aplica o estilo de fonte itálico. */
+    font-style: italic;
+    /* Define a cor do texto para um cinza suave. */
+    color: rgb(102, 102, 102);
+}
+
+/* Estiliza a imagem dentro do container. */
+.container img {
+    /* Faz a imagem ocupar 100% da largura do seu container. */
+    width: 100%;
+}
+
+/* Estiliza os parágrafos (p) dentro do container. */
+.container p {
+    /* Aumenta o espaçamento entre as linhas para facilitar a leitura. */
+    line-height: 1.6;
+}
+
+/* Estiliza a primeira letra do parágrafo com a classe .paragrafo-um. */
+.paragrafo-um::first-letter {
+    /* Aumenta o tamanho da fonte da primeira letra. */
+    font-size: 40px;
+}
+
+/*
+ * ESTILOS DO RODAPÉ (FOOTER)
+ *
+ * Estiliza a seção do rodapé da página.
+ */
+footer {
+    /* Centraliza o texto do rodapé. */
+    text-align: center;
+    /* Define a cor do texto para um cinza suave. */
+    color: rgb(85, 85, 85);
+}

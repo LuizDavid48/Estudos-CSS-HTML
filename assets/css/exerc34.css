@@ -1,0 +1,255 @@
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    background-color: rgb(173, 173, 173);
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+html {
+    font-size: 20px;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(20, 20, 20);
+    color: darkolivegreen;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+header h1 {
+    text-align: left;
+}
+
+header nav ul {
+    text-align: right;
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 500ms ease;
+    color: gray;
+}
+
+nav ul li a:hover {
+    color: darkolivegreen;
+}
+
+main {
+    display: flex;
+    min-height: 75vh;
+}
+
+main .principal {
+    display: flex;
+    width: 70%;
+    margin-top: 100px;
+    color: darkolivegreen;
+}
+
+.sub1 {
+    background-color: aliceblue;
+    padding: 10px;
+}
+
+.sub2 {
+    background-color: rgb(207, 226, 207);
+    padding: 10px;
+}
+
+.sub3 {
+    background-color: rgb(215, 234, 250);
+    padding: 10px;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    /* Alinha os itens em coluna */
+    margin-top: 100px;
+    width: 30%;
+    color: darkolivegreen;
+    background-color: rgb(250, 203, 203);
+    /* Remove align-items: center; aqui e use-o em um contêiner interno se precisar */
+    text-align: center;
+}
+
+aside h2 {
+    padding: 10px;
+    margin-bottom: 0;
+    /* Remove a margem grande */
+    margin-top: 30px;
+    /* Garante que tenha margem de 30px no topo */
+}
+
+aside ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    margin-top: 30px;
+    margin-bottom: 0;
+    flex-direction: column;
+}
+
+aside a {
+    text-decoration: none;
+    color: gray;
+    transition: all 500ms ease;
+    font-weight: bold;
+}
+
+aside a:hover {
+    color: darkolivegreen;
+}
+
+footer {
+    background-color: #202020;
+    /* Um tom de azul escuro */
+    color: darkolivegreen;
+    /* Texto claro para contraste */
+    padding: 40px 20px 20px;
+    /* Espaçamento interno */
+    height: 45vh;
+}
+
+footer form {
+    margin: 40px auto;
+    padding: 20px 30px;
+    background-color: rgb(184, 184, 184);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra para dar profundidade */
+    flex-direction: column;
+    display: flex;
+
+}
+
+fieldset {
+    padding: 5px;
+}
+
+legend {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+label {
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+input {
+    /* Tamanho e espaçamento */
+    width: 100%;
+    padding: 12px;
+
+    /* Aparência visual */
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #333;
+
+    /* Comportamento essencial */
+    box-sizing: border-box;
+    /* Fundamental para o layout */
+    transition: all 0.3s ease;
+    /* Transição suave para efeitos de foco e hover */
+}
+
+textarea {
+    /* Tamanho e espaçamento */
+    width: 100%;
+    padding: 12px;
+
+    /* Aparência visual */
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: inherit;
+    /* Herda a fonte do <body> */
+    font-size: 16px;
+    color: #333;
+
+    /* Comportamento */
+    box-sizing: border-box;
+    /* Fundamental para manter a largura consistente */
+    resize: vertical;
+    /* Permite redimensionar apenas verticalmente */
+    transition: all 0.3s ease;
+    /* Transição suave para estados de foco */
+}
+
+textarea:valid {
+    border-color: #28a745;
+    /* Borda verde */
+}
+
+textarea:invalid {
+    border-color: #dc3545;
+    /* Borda vermelha */
+}
+
+input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+        /* Faz com que .principal e aside fiquem em colunas */
+        height: auto;
+        /* A altura deve se ajustar ao conteúdo */
+    }
+
+    main .principal,
+    aside {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    header {
+        flex-direction: column;
+        /* Empilha o h1 e o nav */
+        height: auto;
+        /* Altura se ajusta ao conteúdo */
+        padding: 1rem;
+    }
+
+    header nav {
+        text-align: center;
+        /* Centraliza a navegação dentro do nav */
+        margin-top: 10px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    main {
+        flex-direction: row;
+    }
+
+    nav {
+        text-align: right;
+    }
+}

@@ -1,0 +1,146 @@
+html {
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    line-height: 1.5;
+}
+
+.container-principal {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "main aside"
+        "footer footer";
+    background: floralwhite;
+    column-gap: 10px;
+}
+
+img {
+    max-width: 400px;
+    border-radius: 15px;
+    transition: all 500ms ease;
+}
+
+img:hover {
+    transform: translateY(20px);
+}
+
+header {
+    grid-area: header;
+    text-align: center;
+    background: tomato;
+    transition: all 1000ms ease-in;
+    color: cornsilk;
+}
+
+header:hover {
+    color: rgba(255, 248, 220, 0.692);
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+header a {
+    margin: 20px;
+    text-decoration: none;
+    font-size: 24px;
+    color: cornsilk;
+}
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.proj1,
+.proj2,
+.proj3,
+.proj4,
+.proj5,
+.proj6 {
+    flex: 0 0 calc(50% - 20px);
+    /* 2 itens por linha com gap */
+}
+
+.proj1,
+.proj2,
+.proj3,
+.proj4,
+.proj5,
+.proj6 p {
+    text-align: center;
+}
+
+main {
+    grid-area: main;
+    color: tomato;
+}
+
+main h1 {
+    text-align: center;
+}
+
+aside {
+    grid-area: aside;
+    color: cornsilk;
+    background: tomato;
+    text-align: center;
+    padding: 20px;
+}
+
+footer {
+    grid-area: footer;
+    text-align: center;
+    color: cornsilk;
+    background: tomato;
+}
+
+@media (max-width: 768px) {
+    .container-principal {
+        display: grid;
+        grid-template-areas:
+            "header"
+            "main"
+            "aside"
+            "footer";
+        grid-template-columns: 100%;
+    }
+
+    footer {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    .galeria div {
+        flex: 0 0 100%;
+    }
+
+}

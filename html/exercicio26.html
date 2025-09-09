@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 26</title>
+    <style>
+        body {
+            margin: 20px;
+            padding: 10px;
+        }
+
+        section {
+            border: 15px solid;
+            padding: 10px;
+            justify-content: center;
+            justify-items: center;
+        }
+
+        header {
+            color: darkgreen;
+            align-items: center;
+            justify-items: center;
+        }
+
+        nav {
+            display: flex;
+            background-color: lightblue;
+            transition: all 500ms ease-in-out;
+            color: white;
+            justify-content: center;
+        }
+
+        nav:hover {
+            background-color: darkblue;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        table {
+            border: 1px solid blue;
+            width: 80%;
+            text-align: center;
+            border-collapse: collapse;
+        }
+        thead {
+            background-color: orange;
+        }
+        tbody tr:nth-child(even):not(.destaque) {
+            background-color:  gray;
+        }
+        tbody tr:nth-child(odd):not(.destaque) {
+            background-color:  white;
+        }
+        tbody .destaque {
+            background-color: yellow;
+            transition: all 500ms ease-in;
+        }
+        tbody .destaque:hover {
+            background-color: gold;
+        }
+        a {
+            color: white;
+            transition: all 300ms ease-in-out;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            background-color: darkblue;
+            color: white;
+        }
+        p {
+            font-weight: bold;
+        }
+        li {
+            margin: 5px;
+        }
+        td,th {
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Feira de tecnologia 2025</h1>
+        <p>
+            Data: 19/08/2025 <br>Local: Av.Independência, Taubaté, SP
+        </p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Programação</a></li>
+            <li><a href="#">Inscrição</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h2>Empresas participantes</h2>
+        <table>
+            <thead>
+                <tr class="cabecalho">
+                    <th>Empresa</th>
+                    <th>Área de atuação</th>
+                    <th>Cidade</th>
+                    <th>Ano de fundação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="destaque">
+                    <td>Seonn Tecnologias</td>
+                    <td>Inteligência artificial</td>
+                    <td>Belo Horizonte</td>
+                    <td>2008</td>
+                </tr>
+                <tr>
+                    <td>Gasportss</td>
+                    <td>Eletrodomésticos</td>
+                    <td>São Paulo</td>
+                    <td>2011</td>
+                </tr>
+                <tr>
+                    <td>Balova Inc</td>
+                    <td>Agropecuária</td>
+                    <td>Porto Alegre</td>
+                    <td>2003</td>
+                </tr>
+                <tr class="destaque">
+                    <td>Grong Tec</td>
+                    <td>Meio Ambiente</td>
+                    <td>Juiz de Fora</td>
+                    <td>2014</td>
+                </tr>
+                <tr>
+                    <td>Tomps Wet</td>
+                    <td>Indústria Petrolífera</td>
+                    <td>Rio de Janeiro</td>
+                    <td>1994</td>
+                </tr>
+                <tr>
+                    <td>Falcon's Inc</td>
+                    <td>Militar</td>
+                    <td>Campinas</td>
+                    <td>2005</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <footer>© 2025 Feira de Tecnologia. Todos os direitos reservados.</footer>
+</body>
+
+</html>

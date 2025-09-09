@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 27</title>
+    <style>
+        header {
+            background-color: darkgreen;
+            text-align: center;
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            transition: all 0.5s ease-out;
+        }
+
+        nav a:hover {
+            background-color: crimson;
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            font-size: 24px;
+            margin: 20px;
+        }
+
+        .apresentacao {
+            border: 10px solid blue;
+            padding: 7px;
+            margin: 5px;
+        }
+
+        .apresentacao h2 {
+            font-size: 25px;
+            text-align: center;
+        }
+
+        .apresentacao p {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .tabela h2 {
+            font-size: 24px;
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            text-align: center;
+            width: 90%;
+        }
+
+        tbody tr:nth-child(odd):not(.destaque):not(.estoque-baixo) {
+            background-color: white;
+        }
+
+        tbody tr:nth-child(even):not(.estoque-baixo) {
+            background-color: rgb(168, 168, 168);
+        }
+
+        thead {
+            background-color: orange;
+        }
+
+        tbody .destaque {
+            background-color: yellow;
+            transition: all 1s ease-in-out;
+        }
+
+        tbody tr.destaque:hover {
+            background-color: gold;
+        }
+
+        .tabela {
+            justify-items: center;
+        }
+
+        li:last-child {
+            font-style: italic;
+        }
+
+        li:first-child a {
+            color: brown;
+        }
+
+        td,
+        th {
+            border: 1px solid;
+        }
+
+        .estoque-baixo {
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Shopping Techs</h1>
+        <p>
+            Bem-vindo à nossa loja
+        </p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Produtos</a></li>
+            <li><a href="#">Ofertas</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+    <section class="apresentacao">
+        <h2>Quem somos nós</h2>
+        <p>
+            A Shopping Techs é uma empresa focada no desenvolvimento de cabos de fibra óptica para drones, temos nossos
+            próprios estabelecimentos, centros de montagem, etc.
+            Estamos sempre em busca de inovação e novos projetos.
+        </p>
+    </section>
+    <section class="tabela">
+        <h2>Confira nossa tabela de Produtos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Preço</th>
+                    <th>Estoque</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="destaque">
+                    <td>Cabo de fibra óptica Reforçado</td>
+                    <td>R$45,00</td>
+                    <td>367</td>
+                </tr>
+                <tr class="estoque-baixo">
+                    <td>Cabo de fibra óptica digital 305mm</td>
+                    <td>R$36,00</td>
+                    <td>156</td>
+                </tr>
+                <tr class="estoque-baixo">
+                    <td>Cabo óptico para áudio digital 2 metros</td>
+                    <td>R$53,00</td>
+                    <td>88</td>
+                </tr>
+                <tr>
+                    <td>Cordão óptico Sc-apc 5 metros</td>
+                    <td>R$20,00</td>
+                    <td>1098</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+
+</html>

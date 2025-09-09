@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML</title>
+    <link rel="stylesheet" href="../assets/css/exerc11.css">
+</head>
+
+<body>
+    <header>
+        <h1>David's Site</h1>
+        <h2>Olá, eu sou o David e este é o meu site</h2>
+    </header>
+    <nav>
+        <ul>
+            <li> <a href="#">Início</a></li>
+            <li> <a href="#">FAQ</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h2>Produtos disponíveis no mercado</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produtos</th>
+                    <th>Preço</th>
+                    <th>Estoque</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Arroz</td>
+                    <td>R$16,00</td>
+                    <td>276</td>
+                </tr>
+                <tr>
+                    <td>Feijão</td>
+                    <td>R$15,00</td>
+                    <td>212</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">Fonte: David's Industries</td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+    <section>
+        <h2>Insira suas informações</h2>
+        <form>
+            <fieldset>
+                <legend>Dados pessoais</legend>
+                <label for="data">Sua data de nascimento</label>
+                <input type="date" name="data" id="data">
+
+                <label for="cpf">Insira seu CPF</label>
+                <input type="number" name="cpf" id="cpf">
+
+                <input type="submit" value="Enviar">
+            </fieldset>
+        </form>
+    </section>
+</body>
+
+</html>

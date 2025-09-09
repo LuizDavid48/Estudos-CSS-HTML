@@ -1,0 +1,687 @@
+/*==========================================================*/
+/* VARIAVEIS E ESTILOS GLOBAIS                            */
+/*==========================================================*/
+
+/* O seletor :root refere-se ao elemento raiz do documento (o <html>). */
+/* É o melhor lugar para declarar variáveis CSS globais. */
+:root {
+  /* Cores - Variáveis permitem reutilizar valores, facilitando a manutenção. */
+  --cor-principal: darkslateblue;
+  /* Define uma cor principal para o fundo. */
+  --cor-secundaria: rgb(203, 255, 120);
+  /* Define uma cor secundária para textos. */
+  --verde-hover: rgb(20, 199, 20);
+  /* Define uma cor para o efeito 'hover' (passar o mouse). */
+  --branco: #fff;
+  /* Define a cor branca. */
+  --sombra-suave: 0 8px 16px rgba(0, 0, 0, 0.4);
+  /* Define um efeito de sombra suave. */
+  --sombra-forte: 0 12px 24px rgba(0, 0, 0, 0.6);
+  /* Define um efeito de sombra mais forte. */
+
+  /* Transicoes */
+  --transicao-padrao: all 0.3s ease-in-out;
+  /* Define uma transição padrão para animações. */
+  --transicao-lenta: all 1s ease-in-out;
+  /* Define uma transição mais lenta. */
+}
+
+/* O seletor universal (*) aplica o estilo a TODOS os elementos, incluindo pseudoelementos ::before e ::after. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* Garante que padding e border não aumentem a largura/altura final do elemento. */
+}
+
+/* Estilos aplicados diretamente ao elemento <html>. */
+html {
+  /* Define a família de fontes padrão para todo o site, com alternativas caso a primeira não esteja disponível. */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  /* Define o tamanho da fonte base para o documento. */
+}
+
+/* Estilos aplicados ao <body>, que contém todo o conteúdo visível da página. */
+body {
+  background-color: var(--cor-principal);
+  /* Usa a variável de cor principal para o fundo. */
+  color: var(--cor-secundaria);
+  /* Usa a variável de cor secundária para o texto. */
+  margin: 0;
+  /* Remove a margem padrão do navegador. */
+  padding: 0;
+  /* Remove o preenchimento padrão do navegador. */
+}
+
+/*==========================================================*/
+/* CABECALHO                                                */
+/*==========================================================*/
+
+/* Estilo para a classe .head-content, que é o nosso cabeçalho. */
+.head-content {
+  position: fixed;
+  /* Fixa o cabeçalho no topo da tela, mesmo ao rolar a página. */
+  background: linear-gradient(45deg, #4b0082, #800080, #da70d6);
+  /* Cria um fundo com gradiente de cores. */
+  width: 100%;
+  /* Faz o cabeçalho ocupar 100% da largura da tela. */
+  display: flex;
+  /* Ativa o layout flexbox para alinhar os itens internos. */
+  justify-content: space-between;
+  /* Distribui os itens: um na esquerda (logo/título) e outro na direita (navegação). */
+  box-shadow: inset 0 0 10px #464646;
+  /* Adiciona uma sombra interna. */
+  overflow: hidden;
+  /* Esconde qualquer conteúdo que transborde o elemento. */
+  z-index: 1000;
+  /* Garante que o cabeçalho fique acima de outros elementos da página. */
+  top: 0;
+  /* Posiciona o cabeçalho no topo da tela. */
+  transition: var(--transicao-lenta);
+  /* Aplica a transição lenta definida nas variáveis. */
+  border-radius: 10px;
+  /* Arredonda as bordas. */
+}
+
+/* Estilo para o cabeçalho quando o mouse está sobre ele. */
+.head-content:hover {
+  transform: translateY(-2px);
+  /* Move o cabeçalho levemente para cima. */
+  box-shadow: var(--sombra-forte);
+  /* Aplica a sombra forte definida nas variáveis. */
+}
+
+/* Estilo para o título <h1> dentro do cabeçalho. */
+.head-content h1 {
+  padding: 15px;
+  /* Adiciona espaçamento interno. */
+  transition: var(--transicao-lenta);
+  /* Aplica a transição lenta. */
+}
+
+/* Estilo para o <h1> quando o mouse está sobre ele. */
+.head-content h1:hover {
+  color: var(--verde-hover);
+  /* Muda a cor do texto usando a variável. */
+  transform: scale(1.05);
+  /* Aumenta ligeiramente o tamanho do texto. */
+}
+
+/* Estilo para a lista não ordenada <ul> dentro da navegação <nav> do cabeçalho. */
+.head-content nav ul {
+  list-style: none;
+  /* Remove os marcadores (bolinhas) da lista. */
+  display: flex;
+  /* Usa flexbox para alinhar os itens da lista horizontalmente. */
+  gap: 10px;
+  /* Cria um espaço de 10px entre cada item da lista. */
+  margin: 0;
+  /* Remove a margem. */
+  padding: 0;
+  /* Remove o preenchimento. */
+}
+
+/* Estilo para o elemento <nav> dentro do cabeçalho. */
+.head-content nav {
+  display: flex;
+  /* Ativa o flexbox. */
+  align-items: center;
+  /* Centraliza os itens da navegação verticalmente no cabeçalho. */
+  padding-right: 15px;
+  /* Adiciona um espaçamento à direita. */
+}
+
+/* Estilo para os links <a> dentro da navegação. */
+.head-content nav a {
+  text-decoration: none;
+  /* Remove o sublinhado padrão dos links. */
+  color: var(--cor-secundaria);
+  /* Define a cor do texto do link. */
+  font-size: 1.15rem;
+  /* Define o tamanho da fonte (1.15 vezes o tamanho base do html). */
+  padding: 15px;
+  /* Adiciona espaçamento interno para aumentar a área clicável. */
+  display: inline-block;
+  /* Permite que padding e outras propriedades de bloco sejam aplicadas. */
+  transition: var(--transicao-lenta);
+  /* Aplica a transição lenta. */
+}
+
+/* Estilo para os links da navegação quando o mouse está sobre eles. */
+.head-content nav a:hover {
+  color: var(--verde-hover);
+  /* Muda a cor do texto. */
+  transform: scale(1.05);
+  /* Aumenta ligeiramente o tamanho. */
+}
+
+/*==========================================================*/
+/* CONTEUDO PRINCIPAL                                       */
+/*==========================================================*/
+
+/* Estilo para a classe .conteudo-principal, que envolve o conteúdo e a barra lateral. */
+.conteudo-principal {
+  display: flex;
+  /* Usa flexbox para colocar o conteúdo principal e a barra lateral lado a lado. */
+  gap: 20px;
+  /* Adiciona um espaço de 20px entre eles. */
+  padding: 20px;
+  /* Adiciona espaçamento interno. */
+  margin-top: 110px;
+  /* Cria um espaço no topo para não ficar escondido atrás do cabeçalho fixo. */
+  align-items: flex-start;
+  /* Alinha os itens no topo do container. */
+}
+
+/* Estilo para a área principal do conteúdo. */
+.main-content {
+  display: flex;
+  /* Ativa o flexbox. */
+  flex-direction: column;
+  /* Organiza os itens internos em uma coluna (um abaixo do outro). */
+  flex-grow: 1;
+  /* Faz com que este elemento ocupe todo o espaço horizontal disponível. */
+}
+
+/* Estilo para o banner. */
+.main-content .banner {
+  display: flex;
+  /* Ativa o flexbox. */
+  flex-direction: column;
+  /* Organiza os itens em coluna. */
+  align-items: center;
+  /* Centraliza os itens horizontalmente. */
+  justify-content: center;
+  /* Centraliza os itens verticalmente. */
+  padding: 15px;
+  /* Espaçamento interno. */
+  text-align: center;
+  /* Centraliza o texto. */
+  font-size: 20px;
+  /* Tamanho da fonte. */
+  color: var(--branco);
+  /* Cor do texto. */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  /* Sombra no texto para melhor legibilidade. */
+  margin-top: 65px;
+  /* Margem no topo. */
+}
+
+/* Estilo para a imagem dentro do banner. */
+.banner img {
+  border-radius: 12px;
+  /* Bordas arredondadas. */
+  height: 220px;
+  /* Altura fixa. */
+  box-shadow: var(--sombra-suave);
+  /* Aplica a sombra suave. */
+  margin: 20px;
+  /* Margem externa. */
+  transition: var(--transicao-padrao);
+  /* Aplica a transição padrão. */
+  max-width: 100%;
+  /* Garante que a imagem não ultrapasse a largura do container. */
+}
+
+/* Efeito para a imagem do banner ao passar o mouse. */
+.banner img:hover {
+  transform: translateY(-5px);
+  /* Move a imagem para cima. */
+  box-shadow: var(--sombra-forte);
+  /* Aplica a sombra forte. */
+}
+
+/* Estilos Comuns para todas as seções de projetos. */
+.project1,
+.project2,
+.project3,
+.project4,
+.project5 {
+  display: grid;
+  /* Usa o layout Grid para organizar o conteúdo interno. */
+  grid-template-columns: repeat(3, 1fr);
+  /* Cria 3 colunas de larguras iguais. */
+  border-radius: 12px;
+  /* Bordas arredondadas. */
+  box-shadow: var(--sombra-suave);
+  /* Sombra suave. */
+  margin: 20px;
+  /* Margem externa. */
+  padding: 10px;
+  /* Espaçamento interno. */
+  transition: var(--transicao-padrao);
+  /* Transição padrão. */
+}
+
+/* Efeito de hover comum para todos os projetos. */
+.project1:hover,
+.project2:hover,
+.project3:hover,
+.project4:hover,
+.project5:hover {
+  transform: translateY(-5px);
+  /* Move o card do projeto para cima. */
+  box-shadow: var(--sombra-forte);
+  /* Aplica sombra forte. */
+}
+
+/* Estilo comum para os títulos <h2> de todos os projetos. */
+.project1 h2,
+.project2 h2,
+.project3 h2,
+.project4 h2,
+.project5 h2 {
+  text-align: center;
+  /* Alinha o texto ao centro. */
+  display: flex;
+  /* Ativa flexbox. */
+  align-items: center;
+  /* Centraliza o texto verticalmente. */
+  justify-content: center;
+  /* Centraliza o texto horizontalmente. */
+}
+
+/* Estilo para todas as imagens com a classe .foto. */
+.foto {
+  width: 100%;
+  /* A imagem ocupa 100% da largura da sua coluna no grid. */
+  height: auto;
+  /* A altura é ajustada automaticamente para manter a proporção. */
+  display: block;
+  /* Remove espaços extras abaixo da imagem. */
+  border-radius: 8px;
+  /* Bordas arredondadas. */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Sombra. */
+  transition: var(--transicao-padrao);
+  /* Transição padrão. */
+}
+
+/* Efeito de hover padrão para as fotos. */
+.foto:hover {
+  transform: scale(1.05);
+  /* Aumenta o tamanho da imagem. */
+  opacity: 0.8;
+  /* Deixa a imagem um pouco transparente. */
+  cursor: pointer;
+  /* Muda o cursor do mouse para uma "mãozinha". */
+}
+
+/* Efeitos de Hover específicos para Imagens */
+/* Efeito de escala de cinza ao passar o mouse. */
+.foto.grayscale:hover {
+  filter: grayscale(100%);
+  /* Converte a imagem para preto e branco. */
+  transform: scale(1.05);
+  /* Aumenta o tamanho. */
+}
+
+/* Efeito de rotação ao passar o mouse. */
+.foto.rotate:hover {
+  transform: rotate(3deg);
+  /* Rotaciona a imagem em 3 graus. */
+}
+
+/* Efeito de brilho na sombra ao passar o mouse. */
+.foto.shadow-glow:hover {
+  transform: scale(1.05);
+  /* Aumenta o tamanho. */
+  /* Adiciona uma sombra colorida com brilho. */
+  box-shadow: 0 0 20px rgba(0, 183, 255, 0.8), 0 0 40px rgba(0, 183, 255, 0.5);
+}
+
+/* Estilos Individuais para cada Projeto */
+.project1 {
+  background: linear-gradient(45deg, #180082, #005780, #70b0da);
+  /* Fundo com gradiente. */
+  color: var(--branco);
+  /* Cor do texto. */
+  /* Sombra de texto com efeito "neon". */
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #a16eff, 0 0 40px #8f66ff, 0 0 80px #a59bff;
+  transition: all 100ms ease;
+  /* Transição rápida. */
+}
+
+.project1:hover {
+  /* Altera a cor da sombra do texto no hover. */
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #1d7b8b, 0 0 40px #0494c0, 0 0 80px #00b7ff;
+}
+
+.project2 {
+  background: linear-gradient(45deg, #4e2503, #663a00, #a78155);
+  color: gold;
+  text-shadow: 0 0 5px #ffdb587c, 0 0 10px #ffbf008f, 0 0 20px #8a2be2, 0 0 40px #8a2be2;
+  transition: all 100ms ease-in-out;
+}
+
+.project2:hover {
+  text-shadow: 0 0 15px #fff, 0 0 30px #fff, 0 0 50px #0ff, 0 0 80px #0ff;
+}
+
+.project3 {
+  background: linear-gradient(45deg, #000000f5, #252325, #4e4e4e);
+  color: #FFF;
+  text-shadow: 0 0 10px #f0f0f0, 0 0 20px #5a6681;
+  transition: all 100ms ease-in-out;
+}
+
+.project3:hover {
+  text-shadow: 0 0 15px #fff, 0 0 30px #fff;
+}
+
+.project4 {
+  background: linear-gradient(45deg, #042b0c, #082b21, #45461d);
+  color: rgb(224, 224, 115);
+  text-shadow: 0 0 10px #f0f8ff, 0 0 20px #a4a4fd, 0 0 40px #7f64e2;
+  transition: all 100ms ease-in-out;
+}
+
+.project4:hover {
+  text-shadow: 0 0 15px #fff, 0 0 30px #fff, 0 0 50px #00aaff;
+}
+
+.project5 {
+  background: linear-gradient(45deg, #200024, #8a0a59, #9453a1);
+  color: rgb(234, 0, 255);
+  text-shadow: 0 0 5px #a314907c, 0 0 10px #c00e998f, 0 0 20px #8a2be2, 0 0 40px #8a2be2;
+  transition: all 100ms ease-in-out;
+}
+
+.project5:hover {
+  text-shadow: 0 0 10px #800303, 0 0 20px #000000e3, 0 0 40px #ff00dd, 0 0 80px #60006d;
+}
+
+/* Estilo para a barra lateral <aside>. */
+aside {
+  overflow-y: auto;
+  /* Adiciona uma barra de rolagem vertical se o conteúdo for maior que a altura. */
+  padding: 5px;
+  /* Espaçamento interno. */
+  margin: 5px;
+  /* Margem externa. */
+  border-radius: 5px;
+  /* Bordas arredondadas. */
+  background: linear-gradient(45deg, #180082, #510080, #70b8da);
+  /* Fundo com gradiente. */
+  text-shadow: 0 0 10px rgb(0, 195, 255);
+  /* Sombra no texto. */
+}
+
+aside h3 {
+  text-align: center;
+  /* Centraliza o título. */
+  font-size: 26px;
+  /* Tamanho da fonte. */
+}
+
+aside p {
+  height: 50px;
+  /* Altura fixa. */
+  font-size: 22px;
+  /* Tamanho da fonte. */
+}
+
+/*==========================================================*/
+/* RODAPE                                                   */
+/*==========================================================*/
+
+/* Estilo para a classe .footer. */
+.footer {
+  margin: 20px;
+  /* Margem externa. */
+  padding: 20px;
+  /* Espaçamento interno. */
+  background: radial-gradient(circle, rgb(112, 1, 112), rgb(30, 2, 36));
+  /* Fundo com gradiente radial (círculo). */
+  display: flex;
+  /* Ativa flexbox. */
+  text-align: center;
+  /* Centraliza o texto. */
+  transition: all 300ms ease-in-out;
+  /* Transição. */
+  box-shadow: var(--sombra-suave);
+  /* Sombra suave. */
+  border-radius: 15px;
+  /* Bordas arredondadas. */
+  flex-direction: column;
+  /* Organiza os itens em coluna. */
+  align-items: center;
+  /* Centraliza os itens horizontalmente. */
+}
+
+/* Efeito de hover para o rodapé. */
+.footer:hover {
+  transform: translateY(-5px);
+  /* Move para cima. */
+  box-shadow: rgba(0, 0, 0, 0.623);
+  /* Altera a sombra. */
+}
+
+/* Estilo para o formulário <form> dentro do rodapé. */
+.footer form {
+  width: 100%;
+  /* Ocupa 100% da largura do rodapé. */
+  padding: 10px;
+  /* Espaçamento interno. */
+  box-sizing: border-box;
+  /* Garante que o padding não aumente a largura total. */
+}
+
+/* Estilo para o <fieldset>, que agrupa os campos do formulário. */
+.footer fieldset {
+  margin: 0 auto;
+  /* Centraliza o fieldset horizontalmente. */
+  padding: 20px;
+  /* Espaçamento interno. */
+  box-sizing: border-box;
+  /* Evita que o padding aumente a largura. */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  /* Sombra. */
+  border: none;
+  /* Remove a borda padrão. */
+  border-radius: 15px;
+  /* Bordas arredondadas. */
+  background: linear-gradient(45deg, #2c0046, #7c0380e3);
+  /* Fundo com gradiente. */
+  height: 600px;
+  /* Altura fixa. */
+  width: 100%;
+  /* Largura total. */
+}
+
+/* Estilo para a legenda <legend> do fieldset. */
+.footer legend {
+  font-size: 2rem;
+  /* Tamanho da fonte. */
+  font-weight: bold;
+  /* Texto em negrito. */
+  text-align: center;
+  /* Alinhamento do texto. */
+  color: var(--branco);
+  /* Cor do texto. */
+  background-color: rgba(255, 255, 255, 0.15);
+  /* Fundo semitransparente. */
+  padding: 10px 20px;
+  /* Espaçamento interno. */
+  border-radius: 10px;
+  /* Bordas arredondadas. */
+  backdrop-filter: blur(5px);
+  /* Efeito de desfoque no fundo. */
+  display: inline-block;
+  /* Permite aplicar padding, etc. */
+  margin-bottom: 25px;
+  /* Margem inferior. */
+}
+
+/* Estilo para os rótulos <label> dos campos do formulário. */
+.footer label {
+  display: block;
+  /* Faz com que cada label ocupe uma linha inteira. */
+  font-weight: bold;
+  /* Negrito. */
+  font-size: 1rem;
+  /* Tamanho da fonte. */
+  text-transform: uppercase;
+  /* Converte o texto para maiúsculas. */
+  letter-spacing: 1px;
+  /* Espaçamento entre as letras. */
+  margin-bottom: 8px;
+  /* Margem inferior. */
+  margin-top: 20px;
+  /* Margem superior. */
+  color: #fff;
+  /* Cor do texto. */
+  transition: all 300ms ease-in-out;
+  /* Transição. */
+}
+
+/* Estilo para os campos <input> e <textarea>. */
+.footer input,
+.footer textarea {
+  width: 75%;
+  /* Largura de 75% do container. */
+  padding: 12px;
+  /* Espaçamento interno. */
+  border: none;
+  /* Sem borda. */
+  border-radius: 8px;
+  /* Bordas arredondadas. */
+  background-color: rgba(255, 255, 255, 0.9);
+  /* Fundo branco semitransparente. */
+  color: #464646;
+  /* Cor do texto digitado. */
+  font-size: 1rem;
+  /* Tamanho da fonte. */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Sombra interna. */
+  transition: var(--transicao-padrao);
+  /* Transição padrão. */
+  margin-bottom: 15px;
+  /* Margem inferior. */
+}
+
+/* Efeito de hover para os campos de entrada. */
+.footer input:hover,
+.footer textarea:hover {
+  transform: scale(1.01);
+  /* Aumenta levemente o tamanho. */
+}
+
+/* Efeito de hover para labels e legendas. */
+.footer label:hover,
+.footer legend:hover {
+  transform: scale(1.05);
+  /* Aumenta o tamanho. */
+}
+
+/* Estilo para o texto de placeholder (dica) dentro dos campos. */
+.footer input::placeholder,
+.footer textarea::placeholder {
+  color: #a9a9a9;
+  /* Cor cinza claro. */
+}
+
+/* Estilo para os campos quando estão em foco (selecionados/clicados). */
+.footer input:focus,
+.footer textarea:focus {
+  outline: none;
+  /* Remove a borda de foco padrão do navegador. */
+  background-color: #fff;
+  /* Fundo fica totalmente branco. */
+  /* Adiciona uma sombra interna e uma borda colorida para indicar o foco. */
+  box-shadow: inset 0 2px 4px rgba(31, 102, 255, 0.452), 0 0 0 3px #550a92;
+}
+
+/* Estilo para o botão de envio. */
+button {
+  display: block;
+  /* Ocupa uma linha inteira. */
+  width: 75%;
+  /* Largura. */
+  padding: 15px;
+  /* Espaçamento interno. */
+  border: none;
+  /* Sem borda. */
+  border-radius: 8px;
+  /* Bordas arredondadas. */
+  color: #fff;
+  /* Cor do texto. */
+  font-size: 1.1rem;
+  /* Tamanho da fonte. */
+  font-weight: bold;
+  /* Negrito. */
+  text-transform: uppercase;
+  /* Texto em maiúsculas. */
+  letter-spacing: 1px;
+  /* Espaçamento entre letras. */
+  background: linear-gradient(to right, #e100ff, #800303);
+  /* Fundo com gradiente. */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  /* Sombra. */
+  cursor: pointer;
+  /* Cursor de "mãozinha". */
+  transition: var(--transicao-padrao);
+  /* Transição padrão. */
+  margin: 10px auto 0;
+  /* Margem superior e centralização horizontal. */
+}
+
+/* Efeito de hover para o botão. */
+button:hover {
+  background: linear-gradient(to right, #0ff, #042b0c);
+  /* Muda o gradiente do fundo. */
+  transform: translateY(-3px);
+  /* Move para cima. */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  /* Sombra mais forte. */
+}
+
+/* Efeito para quando o botão está sendo clicado (:active). */
+button:active {
+  transform: translateY(0);
+  /* Volta à posição original, dando feedback de clique. */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  /* Sombra menor. */
+}
+
+/*==========================================================*/
+/* MEDIA QUERIES (Design Responsivo)                        */
+/*==========================================================*/
+
+/* Este bloco de código será aplicado APENAS em telas com largura máxima de 768px (tablets e celulares). */
+@media (max-width: 768px) {
+  .conteudo-principal {
+    flex-direction: column;
+    /* Altera a direção do flexbox para coluna (conteúdo fica em cima da barra lateral). */
+    align-items: center;
+    /* Centraliza os itens. */
+  }
+
+  aside {
+    display: none;
+    /* Esconde a barra lateral em telas pequenas para economizar espaço. */
+  }
+
+  .project1,
+  .project2,
+  .project3,
+  .project4,
+  .project5 {
+    grid-template-columns: 1fr;
+    /* Muda o grid dos projetos para ter apenas uma coluna. */
+  }
+}
+
+/* Este bloco de código será aplicado APENAS em telas com largura máxima de 1024px (tablets em modo paisagem e laptops pequenos). */
+@media (max-width: 1024px) {
+
+  .project1,
+  .project2,
+  .project3,
+  .project4,
+  .project5 {
+    grid-template-columns: 1fr 1fr;
+    /* Muda o grid dos projetos para ter duas colunas. */
+  }
+}

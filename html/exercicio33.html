@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 33</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding-top: 80px;
+        }
+
+        .cabecalho {
+            position: fixed;
+            /* Torna o cabeçalho fixo no topo */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            /* Garante que o padding não aumente a largura */
+            display: flex;
+            /* Transforma o cabeçalho em um contêiner flex */
+            align-items: center;
+            /* Centraliza os itens verticalmente */
+            justify-content: space-between;
+            /* Distribui o espaço entre o título e o menu */
+            z-index: 1000;
+            /* Garante que o cabeçalho fique por cima de outros elementos */
+            transition: all 200ms ease-in;
+        }
+
+        .cabecalho:hover {
+            background-color: rgb(71, 71, 71);
+            color: darkgrey;
+        }
+
+        .cabecalho h1 {
+            color: #ffaf19;
+            transition: all 500ms ease;
+        }
+
+        .cabecalho h1:hover {
+            transform: scale(1.1);
+            /* transforma a escala em 110% */
+        }
+
+        .cabecalho h2 {
+            color: #ffaf19;
+            transition: all 500ms ease-in;
+        }
+
+        .cabecalho h2:hover {
+            transform: scale(1.1);
+        }
+
+        nav ul {
+            list-style: none;
+            /* Remove os marcadores de lista */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            /* Transforma a lista em um contêiner flex */
+            gap: 20px;
+            /* Adiciona 20px de espaçamento entre os itens */
+        }
+
+
+        nav ul li {
+            margin: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 26px;
+            padding: 5px;
+            transition: all 100ms ease-out;
+            color: black;
+            display: inline-block;
+            /* O transform só funciona se estiver em um display não-inline. */
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        a:active {
+            transform: scale(1.1);
+        }
+
+        .secao1 {
+            font-size: 20px;
+            color: #000000;
+            background-color: brown;
+            transition: all 1.5s ease-in-out;
+            padding: 10px;
+            margin: 5px;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            /* organiza os filhos (h2, p) em coluna */
+            justify-content: center;
+            /* centraliza verticalmente */
+            align-items: center;
+            /* centraliza horizontalmente */
+            text-align: center;
+            /* garante centralização do texto */
+        }
+
+        .secao1 h2 {
+            font-size: 36px;
+        }
+
+        .secao1:hover {
+            color: rgb(132, 0, 255);
+            background-color: rgb(82, 1, 17);
+        }
+
+        .secao2 {
+            text-align: center;
+            font-size: 20px;
+            color: rgb(229, 255, 0);
+            background-color: rgb(243, 166, 72);
+            transition: all 1.5s ease-in-out;
+            padding: 10px;
+            margin: 5px;
+            display: flex;
+            justify-content: center;
+            height: 350px;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .secao2:hover {
+            color: rgb(0, 0, 0);
+            background-color: rgb(255, 115, 0);
+        }
+
+        .secao3 {
+            font-size: 20px;
+            color: #79b7ff;
+            background-color: rgb(10, 8, 102);
+            transition: all 1.5s ease-in-out;
+            padding: 10px;
+            margin: 5px;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            /* organiza os filhos (h2, p) em coluna */
+            justify-content: center;
+            /* centraliza verticalmente */
+            align-items: center;
+            /* centraliza horizontalmente */
+            text-align: center;
+            /* garante centralização do texto */
+        }
+
+        .secao3:hover {
+            color: fuchsia;
+            background-color: rgb(77, 0, 110);
+        }
+
+        footer {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        @media screen and (max-width: 768px) {
+            body {
+                padding-top: 350px;
+                /* aumenta espaço para caber o header expandido */
+            }
+
+            .cabecalho {
+                flex-direction: column;
+                /* joga tudo (h1, h2, nav) em coluna */
+                height: auto;
+                /* altura automática */
+                padding: 20px;
+                /* mais espaço interno */
+            }
+
+            nav ul {
+                flex-direction: column;
+                /* itens do menu em coluna */
+                align-items: center;
+                /* centraliza os itens */
+                gap: 10px;
+                /* espaço entre eles */
+                margin-top: 15px;
+            }
+
+            nav ul li {
+                margin: 0;
+                /* remove a margem grande */
+            }
+
+            a {
+                font-size: 20px;
+                /* deixa o link um pouco menor pra caber melhor */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <h1>Gyutop's Roaming</h1>
+        <h2>O site nº1 em vendas de trenós</h2>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">Suporte</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="secao1">
+            <h2>O primeiro Ato</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non iusto consequatur ducimus, corporis
+                aspernatur architecto cumque et voluptatibus placeat provident pariatur repudiandae sapiente culpa
+                consequuntur, dolores quam in! Voluptate, ipsum.</p>
+        </section>
+        <section class="secao2">
+            <h2>O segundo Ato</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum blanditiis rerum officia sit dolores, nam
+                nulla magnam voluptatem error veritatis. Ipsum et quo aliquid nulla aliquam doloremque magni. Ipsum,
+                eum.</p>
+        </section>
+        <section class="secao3">
+            <h2>O último Ato</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos quaerat dolore provident vel accusamus,
+                incidunt commodi nesciunt exercitationem, nemo neque excepturi quasi quis dolorem cum quam! Officiis
+                dolor voluptate repudiandae!</p>
+        </section>
+    </main>
+    <footer>Gyutop's Roaming - Todos os direitos reservados.</footer>
+</body>
+
+</html>

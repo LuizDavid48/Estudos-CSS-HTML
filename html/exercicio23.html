@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 23</title>
+    <style>
+        section {
+            padding: 5px;
+            border: 5px solid;
+            margin: 25px;
+            background: rgb(3, 63, 3);
+            height: 400px;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
+
+        nav {
+            padding: 3px;
+            border: 3px solid;
+            margin: 15px;
+            background: rgb(235, 180, 180);
+            width: 75%;
+            height: 50%;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        ul {
+            padding: 3px;
+            margin: 5px;
+            overflow: auto;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .link1 {
+            padding: 3px;
+            border: 1px solid;
+            width: 250px;
+            text-align: center;
+            background: yellow;
+        }
+
+        .link2 {
+            padding: 3px;
+            border: 1px solid;
+            text-align: center;
+            background: green;
+        }
+
+        .link3 {
+            padding: 3px;
+            border: 1px solid;
+            text-align: center;
+            background: orange;
+        }
+
+        .link4 {
+            padding: 3px;
+            border: 1px solid;
+            text-align: center;
+            background: rgb(45, 146, 160);
+        }
+
+        a {
+            text-decoration: none;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        a:active {
+            color: rgb(68, 23, 110);
+            font-style: italic;
+        }
+
+        a {
+            transition: all 500ms ease-in-out;
+        }
+
+        a:hover {
+            background: cornflowerblue;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <nav>
+            <ul>
+                <li class="link1"><a href="#">Inicio</a></li>
+                <li class="link2"><a href="#">Produtos</a></li>
+                <li class="link3"><a href="#">Serviço</a></li>
+                <li class="link4"><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </section>
+</body>
+
+</html>

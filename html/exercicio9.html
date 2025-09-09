@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML</title>
+    <style>
+        td {
+            width: 98px;
+            height: 17px;
+            overflow: hidden;
+            box-sizing: border-box;
+            border: 1px solid;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            table-layout: fixed;
+            width: 90%;
+        }
+
+        th {
+            width: 98px;
+            height: 17px;
+            overflow: hidden;
+            box-sizing: border-box;
+            border: 1px solid;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-align: center;
+        }
+
+        header h1 {
+            background-color: brown;
+            text-align: center;
+            color: aliceblue;
+        }
+
+        body {
+            background: rgb(191, 255, 148);
+        }
+
+        footer {
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Mais um exercício para fixar fundamentos do HTML</h1>
+    </header>
+    <nav>
+        <ul>
+            <li> <a href="%">Testando denovo</a></li>
+            <li> <a href="@">Teste 1,2,3</a></li>
+        </ul>
+    </nav>
+    <section>
+        <table>
+            <thead>
+                <tr>
+                    <th>Curso de Ingles</th>
+                    <th>Curso de Espanhol</th>
+                    <th>Curso de Alemão</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>160 horas</td>
+                    <td>200 horas</td>
+                    <td>180 horas</td>
+                </tr>
+                <tr>
+                    <td>R$1200</td>
+                    <td>R$1500</td>
+                    <td>R$1350</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Agradecimentos</td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+    <section>
+        <form>
+            <fieldset>
+                <p>
+                    <label for="Oi">Oi</label>
+                    <input type="date" name="oie" id="oie">
+                    <label for="Ola">Ola</label>
+                    <input type="password" name="Ola" id="Ola" placeholder="Coloca a senha aqui!">
+                    <label for="Hello">Hello</label>
+                    <input type="range" name="Hello" id="Hello">
+                </p>
+            </fieldset>
+        </form>
+    </section>
+    <footer>Obrigado e adeus</footer>
+</body>
+
+</html>

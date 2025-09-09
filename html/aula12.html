@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu html</title>
+    <style>
+        label {
+            cursor: pointer;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <form action="#" method="get" target="_blank">
+            <h1>
+                Preencha o item abaixo
+            </h1>
+            <p>Formulário</p>
+
+            <fieldset>
+                <legend>
+                    Descrição
+                </legend>
+                <p>
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome">
+                </p>
+                <p>
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Resetar</button>
+                </p>
+            </fieldset>
+        </form>
+    </section>
+    <section>
+        <form action="#" method="get">
+            <fieldset>
+                <p>
+                    <label for="checkbox">Clique aqui</label>
+                    <input type="checkbox" id="checkbox" name="checkbox"><br>
+                    <label for="checkbox2">Clique aqui</label>
+                    <input type="checkbox" id="checkbox2" name="checkbox2"><br>
+                    <label for="checkbox3">Clique aqui</label>
+                    <input type="checkbox" id="checkbox3" name="checkbox3"><br>
+                    <button type="reset">Reset</button>
+                </p>
+            </fieldset>
+        </form>
+    </section>
+    <section>
+        <form action="#">
+            <fieldset>
+                <p>
+                    <label for="opcao1">Opção 1</label>
+                    <input type="date" name="opcao1" id="opcao1"><br>
+                    <label for="vol">Volume (between 0 and 50):</label>
+                    <input type="range" id="vol" name="vol"><br>
+                    <input type="range" list="tickmarks">
+                    <datalist id="tickmarks">
+                        <option value="0" label="0%">
+                        <option value="10">
+                        <option value="20">
+                        <option value="30">
+                        <option value="40">
+                        <option value="50" label="50%">
+                        <option value="60">
+                        <option value="70">
+                        <option value="80">
+                        <option value="90">
+                        <option value="100" label="100%">
+                    </datalist>
+                </p>
+            </fieldset>
+        </form>
+    </section>
+</body>
+
+</html>
